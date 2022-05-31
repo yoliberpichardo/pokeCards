@@ -5,8 +5,13 @@
                 <div class="pokeID">
                     <h1>{{poke.id}}</h1>
                 </div>
-                <div class="iconsDetails">
-                    <img :src="colorIcons" @click="changeIcons" alt="">
+                <div class="iconsDetails" @click="changeIcons(poke.id)">
+                    <span v-if="colorIcons || isActive(poke.id, confirmID, isStart1)">
+                        <img :src="start1" :alt="poke.id">
+                    </span>
+                    <span v-else-if="!colorIcons && confirmID == poke.id && clearID">
+                        <img :src="start2" :alt="poke.id">
+                    </span>
                 </div>
             </div>
             <div class="imgContent">
@@ -38,17 +43,28 @@ export default {
     data(){
         return{
             data: false,
-            colorIcons: start1,
+            colorIcons: true,
+            start1: start1,
+            start2: start2,
+            confirmID: Number,
+            isStart1: null
 
         }
     },
     methods:{
-      pokeAssign() {
-          this.pokeData != null ? this.data = true : this.data = false
-      },
-        changeIcons(){
-          this.colorIcons != start1 ? this.colorIcons = start2
-            : this.colorIcons = start1
+        pokeAssign() {
+            this.pokeData != null ? this.data = true : this.data = false
+        },
+        changeIcons(id){
+            this.colorIcons = !this.colorIcons
+            this.confirmID = id
+            this.isStart1 = true 
+        },
+        clearID(){
+            this.confirmID = Number
+        },
+        isActive(id, id2 , isStart1){
+            id != id2 ? isStart1 = true : isStart1 = false
         }
     },
     computed:{
