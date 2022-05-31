@@ -15,13 +15,15 @@ export default {
     data(){
         return{
           pokeData: Array,
-          pokeSpecie: Array
+          pokeSpecie: Array,
+          // lengthA: 0
         }
     },
     methods:{
       async dataPokemons() {
-        const pokeDatas = await getPokemonOptions()
-        this.pokeData = pokeDatas
+        this.pokeData = await getPokemonOptions()
+        // this.lengthA = this.pokeData.length
+        // console.log(this.lengthA);
       }
     },
     mounted(){
