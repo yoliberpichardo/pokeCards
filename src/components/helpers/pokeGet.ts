@@ -2,7 +2,7 @@ import apiGet from "@/api/getApi"
 
 const getPokemons = () => {
 
-    const pokemonArr = Array.from( Array(80)  )
+    const pokemonArr = Array.from( Array(2)  )
 
     return pokemonArr.map( ( _ , index ) => index + 1)
 

@@ -1,0 +1,29 @@
+{"colorType":{
+    "normal":{
+        "color":"#898585"
+    },
+    "fire":{
+        "color":"#ff5500"
+    },
+    "water":{
+        "color":"#00d5ff"
+    },
+    "electric":{
+        "color":"#f2ff00"
+    },
+    "ground":{
+        "color":"#4a3131"
+    },
+    "poison":{
+        "color":"#4c00fc"
+    },
+    "bug":{
+        "color":"#3d2727"
+    },
+    "fighting":{
+        "color":"#ff0000"
+    },
+    "rock":{
+        "color":"#db9a9a"
+    }
+}}

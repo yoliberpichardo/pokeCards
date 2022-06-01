@@ -1,22 +1,20 @@
 <template>
 <div class="pokemonsContent">
-  <PokeCard :pokeData="pokeData"/>
+  <PokeCard :pokeData="pokeData" />
 </div>
 </template>
 
 <script>
-import PokeCard from './PokeCard.vue';
 import getPokemonOptions from './helpers/pokeGet.ts';
+import PokeCard from './PokeCard.vue';
 
 
 export default {
-  components: { PokeCard },
+  components: {PokeCard },
     name:'Home',
     data(){
         return{
           pokeData: Array,
-          pokeSpecie: Array,
-          // lengthA: 0
         }
     },
     methods:{
