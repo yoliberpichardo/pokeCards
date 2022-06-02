@@ -1,29 +1,44 @@
 {"colorType":{
     "normal":{
-        "color":"#898585"
+        "color":"#DDCCAA"
     },
     "fire":{
-        "color":"#ff5500"
+        "color":"#FF7F00"
     },
     "water":{
-        "color":"#00d5ff"
+        "color":"#B0E2FF"
     },
     "electric":{
-        "color":"#f2ff00"
+        "color":"#FFD700"
     },
     "ground":{
-        "color":"#4a3131"
+        "color":"#DEB887"
     },
     "poison":{
-        "color":"#4c00fc"
+        "color":"#CC88BB"
     },
     "bug":{
-        "color":"#3d2727"
+        "color":"#99CC33"
     },
     "fighting":{
-        "color":"#ff0000"
+        "color":"#FF6A6A"
     },
     "rock":{
-        "color":"#db9a9a"
-    }
+        "color":"#CD853F"
+    },
+    "grass":{
+        "color":"#99FF66"
+    },
+    "steel":{
+        "color":"#CCCCCC"
+    },
+    "dragon":{
+        "color":"#AB82FF"
+    },
+    "ghost":{
+        "color": "#778899"
+    },
+    "fairy":{
+        "color":"FFB0FF"
+    },
 }}

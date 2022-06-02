@@ -1,4 +1,4 @@
-# anime_search
+# PokeCard
 
 ## Project setup
 ```

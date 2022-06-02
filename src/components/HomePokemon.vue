@@ -1,16 +1,16 @@
 <template>
 <div class="pokemonsContent">
-  <PokeCard :pokeData="pokeData" />
+  <PokeCardFront :pokeData="pokeData" />
 </div>
 </template>
 
 <script>
 import getPokemonOptions from './helpers/pokeGet.ts';
-import PokeCard from './PokeCard.vue';
+import PokeCardFront from './PokeCardFront.vue';
 
 
 export default {
-  components: {PokeCard },
+  components: {PokeCardFront },
     name:'Home',
     data(){
         return{

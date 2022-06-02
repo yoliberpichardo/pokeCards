@@ -1,8 +1,7 @@
 <template>
-    <div class="bodyCardBack">
-        <div v-for="poke in pokeData" :key="poke.id" class="bodyBack" >
+    <div v-if="data" class="bodyCardBack" :style="rotation">
+        <div v-for="poke in data" :key="poke.id" class="subBodyBack" :style="rotation">
             <div class="pokeTitle">
-                <h2 class="pokeID">#{{poke.id}}</h2>
                 <h1 class="pokeName">{{poke.name}}</h1>
             </div>
             <div class="contentStats">
@@ -38,16 +37,21 @@
 <script>
 export default {
     name:'PokeCardBack',
-    props:['pokeData'],
-    methods:{
-        viewData(){
-            console.log(this.pokeData[0]);
+    props:['pokeData','rotation'],
+    emits:['changeCard'],
+    data(){
+        return{
+            data: [],
+            change: null
         }
     },
+    methods:{
+    },
     watch:{
-        pokeData (){
-            this.viewData()
+        pokeData: function(){
+            this.data = [this.pokeData]
         }
+        
     }
 
 }
@@ -59,8 +63,17 @@ export default {
         flex-direction: row;
         flex-wrap: wrap;
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
+        padding: 2rem;
     }
+
+    .subBodyBack{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        border-radius: 20px;
+    }
+
     .pokeTitle, .habiContent, .contentStats{
         display: flex;
         flex-direction: row;
@@ -68,7 +81,8 @@ export default {
     }
 
     .contentStats{
-        justify-items: ;
+        min-width: 100%;
+        justify-content: space-around;
     }
 
     .pokeTitle{
