@@ -6,7 +6,7 @@
 
 <script>
 import getPokemonOptions from './helpers/pokeGet.ts';
-import PokeCardFront from './PokeCardFront.vue';
+import PokeCardFront from './PokeCard.vue';
 
 
 export default {
@@ -20,8 +20,10 @@ export default {
     methods:{
       async dataPokemons() {
         this.pokeData = await getPokemonOptions()
-        // this.lengthA = this.pokeData.length
-        // console.log(this.lengthA);
+        this.pokeData.map(poke => {
+          poke.isFront = true;
+          return poke
+        })
       }
     },
     mounted(){

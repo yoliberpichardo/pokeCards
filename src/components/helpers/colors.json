@@ -1,6 +1,7 @@
 {"colorType":{
     "normal":{
-        "color":"#DDCCAA"
+        "color":"#DDCCAA",
+        "background": ""
     },
     "fire":{
         "color":"#FF7F00"
@@ -41,4 +42,16 @@
     "fairy":{
         "color":"FFB0FF"
     },
+    "psychic":{
+        "color": "#FFC6D9"
+    },
+    "flying":{
+        "color": "#7AE7C7"
+    },
+    "ice":{
+        "color": "#AFEAFD"
+    },
+    "default":{
+        "color":"#2A1A1F"
+    }
 }}
