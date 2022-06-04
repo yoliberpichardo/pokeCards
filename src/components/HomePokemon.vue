@@ -8,13 +8,12 @@
 import getPokemonOptions from './helpers/pokeGet.ts';
 import PokeCardFront from './PokeCard.vue';
 
-
 export default {
   components: {PokeCardFront },
     name:'Home',
     data(){
         return{
-          pokeData: Array,
+          pokeData: null,
         }
     },
     methods:{
@@ -22,6 +21,9 @@ export default {
         this.pokeData = await getPokemonOptions()
         this.pokeData.map(poke => {
           poke.isFront = true;
+          poke.rotation = '';
+          poke.isStar = true;
+          poke.isColor = ''
           return poke
         })
       }
