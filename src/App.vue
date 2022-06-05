@@ -1,16 +1,19 @@
 <template>
-  <PokeHome />
+  <div class="bodyNabvar">
+    <Navbar />
+    <router-view />
+  </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import PokeHome from './components/HomePokemon.vue';
+import Navbar from './shared/components/Navbar.vue';
 
 export default defineComponent({
   name: 'App',
   components: {
-    PokeHome
-  }
+    Navbar,
+}
 });
 </script>
 
