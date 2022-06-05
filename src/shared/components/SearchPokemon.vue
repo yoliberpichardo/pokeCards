@@ -1,7 +1,7 @@
 <template>
   <div class="bodySearch">
-    <input type="text" v-model="searchPokemon">
-    <button @click="resultSearch(searchPokemon)">Search</button>
+    <input type="text" @input="resultSearch" v-model="searchPokemon">
+    <!-- <button @click="resultSearch(searchPokemon)">Search</button> -->
   </div>
 </template>
 
@@ -14,8 +14,8 @@ export default {
     }
   },
   methods: {
-    resultSearch(search) {
-      this.$emit('changeSearch',search)
+    resultSearch(e) {
+      this.$emit('changeSearch', e.target.value)
     }
   },
 }

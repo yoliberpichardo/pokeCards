@@ -1,7 +1,7 @@
 <template>
   <div class="pokemonSearch">
     <SearchPokemon @changeSearch="resolveSearch($event)" v-if="use.mountSearch" />
-    <PokeCard v-if="use.fullData" :pokeData="resultSearch" />
+    <PokeCard :pokeData="resultSearch" />
   </div>
 </template>
 
@@ -15,7 +15,8 @@ export default {
   data() {
     return {
       valueSearch: null,
-      resultSearch: []
+      resultSearch: [],
+      checkSearch: null 
     }
   },
   setup() {
@@ -27,11 +28,10 @@ export default {
   methods: {
     viewSearch() {
       this.resultSearch = this.use.fullData.filter((poke) => {
-        return Object.keys(poke.name).some((key) => {
-          return String(poke.name[key]).toLowerCase().indexOf(this.valueSearch) > -1
+        return Object.keys(poke).some((key) => {
+          return String(poke[key]).toLowerCase().indexOf(this.valueSearch) > -1
         })
       })
-      console.log(this.resultSearch);
     },
     resolveSearch(event) {
       this.valueSearch = event

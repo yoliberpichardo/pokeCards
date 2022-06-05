@@ -109,7 +109,7 @@ export default {
                     if (poke.isStar === false) {
                         return this.use.pokemonFavorite.push(poke)
                     } else if (poke.isStar === true) {
-                        return this.use.pokemonFavorite.splice(poke[id])
+                        return this.use.pokemonFavorite.splice(poke[id]) 
                     }
                     
                     return poke
