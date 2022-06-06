@@ -89,7 +89,7 @@
 </template>
 
 <script>
-import colors from './helpers/colors.json'
+import colors from '../helpers/colors.json'
 import useStore from './helpers/stores'
 export default {
     name: 'Card',
@@ -107,7 +107,7 @@ export default {
                 if (poke.id === id) {
                     if (poke.isStar === true) {
                         poke.isStar = false
-                        return this.use.pokemonFavorite = [poke]
+                        return this.use.pokemonFavorite.push(poke)
                     }
                     return poke
                 }
@@ -181,7 +181,7 @@ export default {
 
     .subBodyCard{
         max-width: 512px;
-        background-color: #ffffff;
+        background-color: #16013e;
         color: #0e11b5;
     }
 

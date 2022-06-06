@@ -1,0 +1,74 @@
+{"colorType":{
+    "normal":{
+        "color":"#DDCCAA",
+        "background": "#ebab58"
+    },
+    "fire":{
+        "color":"#FF7F00",
+        "background": "#d2bbff"
+    },
+    "water":{
+        "color":"#B0E2FF",
+        "background": "#bdea51"
+    },
+    "electric":{
+        "color":"#FFD700",
+        "background": "#f0c06a"
+    },
+    "ground":{
+        "color":"#DEB887",
+        "background": "#cf88b9"
+    },
+    "poison":{
+        "color":"#CC88BB",
+        "background": "#efa141"
+    },
+    "bug":{
+        "color":"#99CC33",
+        "background": "#ff715e"
+    },
+    "fighting":{
+        "color":"#FF6A6A",
+        "background": "#e07d48"
+    },
+    "rock":{
+        "color":"#CD853F",
+        "background": "#9efc62"
+    },
+    "grass":{
+        "color":"#99FF66",
+        "background": "#c0deac"
+    },
+    "steel":{
+        "color":"#CCCCCC",
+        "background": "#af88fb"
+    },
+    "dragon":{
+        "color":"#AB82FF",
+        "background": "#6c8ec3"
+    },
+    "ghost":{
+        "color": "#778899",
+        "background": "#f9b0fe"
+    },
+    "fairy":{
+        "color":"#FFB0FF",
+        "background": "#ffc1dc"
+    },
+    "psychic":{
+        "color": "#FFC6D9",
+        "background": "#83e6c1"
+    },
+    "flying":{
+        "color": "#7AE7C7",
+        "background": "#a1eaf9"
+    },
+    "ice":{
+        "color": "#AFEAFD",
+        "background": "#2f1f25"
+    },
+    "default":{
+        "color":"#2A1A1F",
+        "background": "#dc92cf"
+    }
+}}
