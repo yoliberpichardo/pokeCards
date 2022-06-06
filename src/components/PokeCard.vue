@@ -7,7 +7,7 @@
                         <h1> {{poke.id}}</h1>
                     </div>
                     <div class="infoContent">
-                        <div class="iconsFav" @click="changeStar(poke.id)">
+                        <div class="iconsFav" @click="changeStar(poke.id)" @dblclick="changeFavorite(poke.id)">
                             <svg v-if="!poke.isStar" :fill="poke.isColor" xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 576 512">
                                 <path
@@ -103,15 +103,12 @@ export default {
     methods:{
         changeStar(id){
             this.pokeData.map(poke => {
-                console.log(poke.id);
+                console.log(poke.isStar);
                 if (poke.id === id) {
-                    poke.isStar = !poke.isStar
-                    if (poke.isStar === false) {
-                        return this.use.pokemonFavorite.push(poke)
-                    } else if (poke.isStar === true) {
-                        return this.use.pokemonFavorite.splice(poke[id]) 
+                    if (poke.isStar === true) {
+                        poke.isStar = false
+                        return this.use.pokemonFavorite = [poke]
                     }
-                    
                     return poke
                 }
              })
@@ -125,6 +122,18 @@ export default {
                 }
             })
         },
+        changeFavorite(id) {
+            this.pokeData.map(poke => {
+                if (poke.id === id) {
+                    if (poke.isStar === false) {
+                        poke.isStar = true
+                        return this.use.pokemonFavorite.splice(poke.id)
+                    }
+
+                    return poke
+                }
+            })
+        }
     },
     watch: {
         pokeData: async function () {
