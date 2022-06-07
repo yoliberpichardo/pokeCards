@@ -5,15 +5,15 @@
     },
     "fire":{
         "color":"#FF7F00",
-        "background": "#d2bbff"
+        "background": "#bdea51"
     },
     "water":{
         "color":"#B0E2FF",
-        "background": "#bdea51"
+        "background": "#f0c06a"
     },
     "electric":{
         "color":"#FFD700",
-        "background": "#f0c06a"
+        "background": "#d2bbff"
     },
     "ground":{
         "color":"#DEB887",
@@ -37,7 +37,7 @@
     },
     "grass":{
         "color":"#99FF66",
-        "background": "#c0deac"
+        "background": "#6583dc"
     },
     "steel":{
         "color":"#CCCCCC",

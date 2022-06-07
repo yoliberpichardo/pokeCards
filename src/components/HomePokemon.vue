@@ -5,8 +5,8 @@
 </template>
 
 <script>
-import getPokemonOptions from './helpers/pokeGet.ts';
-import useStore from './helpers/stores';
+import getPokemonOptions from '../helpers/pokeGet.ts';
+import useStore from '../helpers/stores';
 import PokeCardFront from './PokeCard.vue';
 
 export default {
@@ -25,7 +25,7 @@ export default {
           poke.isFront = true;
           poke.rotation = '';
           poke.isStar = true;
-          poke.isColor = ''
+          poke.isColor = '';
           return poke
         })
       }
@@ -36,5 +36,6 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
+
 </style>

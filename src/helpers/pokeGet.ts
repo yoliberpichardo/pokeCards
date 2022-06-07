@@ -16,7 +16,7 @@ const getPokemonOptions = async() => {
 const getPokemonNames = async() => {
     const resultPokemonArr = getPokemons()
     let pokeDatas = [];
-
+  
     for (let index = 0; index < resultPokemonArr.length; index++) {
         pokeDatas.push(await (await apiGet.get(`pokemon/${index+1}`)).data)
     }

@@ -18,6 +18,12 @@ export default defineComponent({
 </script>
 
 <style>
+html{
+  box-sizing: border-box;
+  margin: 0;
+  background: #000000;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -27,12 +33,4 @@ export default defineComponent({
   margin-top: 60px;
 }
 
-.{
-  box-sizing: border-box;
-  margin: 0;
-}
-/* 
-body{
-  
-} */
 </style>

@@ -8,7 +8,7 @@
 
 <script>
 import SearchPokemon from '@/components/SearchPokemon.vue'
-import useStore from './helpers/stores'
+import useStore from '../helpers/stores'
 import PokeCard from './PokeCard.vue'
 export default {
   name:'PokemonSearch',

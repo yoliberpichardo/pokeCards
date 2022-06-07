@@ -1,6 +1,6 @@
 <template>
     <div v-if="pokeData" class="bodyCardFront">
-        <div v-for="poke in pokeData" :key="poke.id" class="subBodyCard" :style="`color: ${poke.isColor}`">
+        <div v-for="poke in pokeData" :key="poke.id" class="subBodyCard" :style="`color: ${poke.isColor}; box-shadow: 5px 5px 9px 3px ${poke.isColor};`">
             <div class="rotationBody" :style="poke.rotation">
                 <div class="up-menu" :style="poke.rotation">
                     <div class="pokeID">
@@ -90,7 +90,7 @@
 
 <script>
 import colors from '../helpers/colors.json'
-import useStore from './helpers/stores'
+import useStore from '../helpers/stores'
 export default {
     name: 'Card',
     props: ['pokeData'],
@@ -160,17 +160,17 @@ export default {
     .subBodyCard{
         max-width: 100%;
         height: 100%;
-        margin: 10px;
+        margin: 20px;
         display: flex;
         flex-direction: row;
         border-radius: 20px;
-        box-shadow: 0 0 10px #272727d8;
+        box-shadow: 5px 5px 9px 3px #f6f4f4;
         perspective: 1000px;
     }
 
     .rotationBody{
         width: 100%;
-        min-height: 755px;
+        min-height: 666px;
         display: flex;
         flex-direction: column;
         text-align: center;
@@ -181,12 +181,13 @@ export default {
 
     .subBodyCard{
         max-width: 512px;
-        background-color: #16013e;
-        color: #0e11b5;
+        background:   #000000;
+
     }
 
     .imgContent img {
-        max-width: 30 0px;
+        max-width: 420px;
+        max-height: 420px;
     }
     .up-menu{
         width:calc(100% - 30px);
@@ -217,17 +218,24 @@ export default {
         margin-left: 10px;
     }
 
-    .iconsFav img{
-        width: 2rem;
-        height: 2rem;
-        color: #00ffff;
-    }
-
     .iconsFav svg{
         width: 2rem;
         height: 2rem;
         color: #00ffff;
     }
+
+    .descriptionContent{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .typesContent{
+        display: flex;
+        justify-content: space-evenly;
+
+    }
+
     .bodyCardBack{
         display: flex;
         flex-direction: row;
@@ -253,8 +261,10 @@ export default {
     .contentStats{
         min-width: 100%;
         justify-content: space-around;
+        align-items: flex-start;
         font-size: 1.2rem;
     }
+
 
     .pokeTitle{
         justify-content: center;
@@ -265,7 +275,7 @@ export default {
     }
 
     .habiContent{
-        margin: 15px;
+        margin: 10px;
     }
 
     .pokeStats div{

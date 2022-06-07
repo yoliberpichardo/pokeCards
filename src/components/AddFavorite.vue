@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import useStore from './helpers/stores'
+import useStore from '../helpers/stores'
 import PokeCard from './PokeCard.vue'
 export default {
   name:'AddFavorite',
