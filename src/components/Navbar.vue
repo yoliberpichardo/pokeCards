@@ -5,24 +5,31 @@
       <router-link to="/AddFavorite">Pokemons Favorite</router-link>
       <router-link to="/PokemonSearch">Search pokemon</router-link>
     </nav>
+    <SearchPokemon @changeSearch="resolveSearch($event)" v-if="use.mountSearch" />
   </div>
 </template>
 
 <script>
+import SearchPokemon from './SearchPokemon.vue'
 export default {
+  components: { SearchPokemon },
   name: 'Navbar',
+  methods:{
+    resolveSearch(event) {
+      this.valueSearch = event
+    }}
 }
 </script>
 
 <style scoped>
 nav a {
   font-weight: bold;
-  color: #2c3e50;
+  color: #ffffff;
   margin: 0.6rem;
 }
 
 nav a.router-link-exact-active {
-  color: #42b983;
+  color: #027ff4;
 }
 
 .body-nav {

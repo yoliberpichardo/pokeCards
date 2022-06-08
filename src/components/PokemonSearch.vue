@@ -1,6 +1,6 @@
 <template>
   <div class="pokemonSearch">
-    <SearchPokemon @changeSearch="resolveSearch($event)" v-if="use.mountSearch" />
+    <!-- <SearchPokemon @changeSearch="resolveSearch($event)" v-if="use.mountSearch" /> -->
     <PokeCard :pokeData="resultSearch" />
     <PokeCard v-if="resultSearch.length < 1" :pokeData="use.fullData" />
   </div>
@@ -37,9 +37,6 @@ export default {
           }
         })
       })
-    },
-    resolveSearch(event) {
-      this.valueSearch = event
     }
   },
   mounted() {
