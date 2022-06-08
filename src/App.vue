@@ -1,5 +1,5 @@
 <template>
-  <div class="bodyNabvar">
+  <div class="bodyPage">
     <Navbar />
     <router-view />
   </div>
@@ -30,7 +30,6 @@ html{
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
-}
+  }
 
 </style>

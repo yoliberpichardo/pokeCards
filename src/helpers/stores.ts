@@ -7,7 +7,8 @@ const useStore = defineStore('storeID', {
       mountSearch: false,
       mountData: false,
       fullData: [],
-      pokemonFavorite: []
+      pokemonFavorite: [],
+      resultSearch: [],
     }
   },
   actions: {

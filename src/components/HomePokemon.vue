@@ -1,9 +1,3 @@
-<template>
-<div class="pokemonsContent">
-  <PokeCardFront :pokeData="use.fullData" />
-</div>
-</template>
-
 <script>
 import getPokemonOptions from '../helpers/pokeGet.ts';
 import useStore from '../helpers/stores';
@@ -36,6 +30,16 @@ export default {
 }
 </script>
 
-<style>
 
+<template>
+<div class="pokemonsContent">
+  <PokeCardFront v-if="use.resultSearch.length < 1" :pokeData="use.fullData" />
+  <PokeCardFront :pokeData="use.resultSearch" />
+</div>
+</template>
+
+<style scoped>
+  .bodyCardFront{
+    margin-top: 50px;
+  }
 </style>

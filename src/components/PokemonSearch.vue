@@ -1,8 +1,6 @@
 <template>
   <div class="pokemonSearch">
-    <!-- <SearchPokemon @changeSearch="resolveSearch($event)" v-if="use.mountSearch" /> -->
-    <PokeCard :pokeData="resultSearch" />
-    <PokeCard v-if="resultSearch.length < 1" :pokeData="use.fullData" />
+    <PokeCard  :pokeData="use.fullData" />
   </div>
 </template>
 
@@ -15,7 +13,7 @@ export default {
   components: { PokeCard, SearchPokemon },
   data() {
     return {
-      resultSearch: [],
+      searchUpdate: null,
       checkSearch: null 
     }
   },
@@ -25,25 +23,12 @@ export default {
       use
     }
   },
-  methods: {
-    viewSearch() {
-      console.log(this.use.returnSearch);
-      this.resultSearch = this.use.fullData.filter((poke) => {
-        return Object.keys(poke).some((key) => {
-          if(!isNaN(parseInt(this.use.returnSearch)) === false){
-            return String(poke[key].name).toLowerCase().indexOf(this.use.returnSearch) > -1
-          } else if (!isNaN(parseInt(this.use.returnSearch))){
-            return String(poke.id).indexOf(this.use.returnSearch) > -1
-          }
-        })
-      })
-    }
-  },
   mounted() {
     this.use.mountSearch = !this.use.mountSearch
+    this.searchUpdate = this.use.returnSearch
   },
   watch: {
-    valueSearch: function () {
+    searchUpdate: function () {
       this.viewSearch()
     }
   },
