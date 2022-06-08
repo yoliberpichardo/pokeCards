@@ -10,13 +10,20 @@
 </template>
 
 <script>
+import useStore from '@/helpers/stores'
 import SearchPokemon from './SearchPokemon.vue'
 export default {
   components: { SearchPokemon },
   name: 'Navbar',
+  setup() {
+    const use = useStore()
+    return {
+      use
+    }
+  },
   methods:{
     resolveSearch(event) {
-      this.valueSearch = event
+      this.use.returnSearch = event
     }}
 }
 </script>

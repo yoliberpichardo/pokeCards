@@ -15,7 +15,6 @@ export default {
   components: { PokeCard, SearchPokemon },
   data() {
     return {
-      valueSearch: null,
       resultSearch: [],
       checkSearch: null 
     }
@@ -28,12 +27,13 @@ export default {
   },
   methods: {
     viewSearch() {
+      console.log(this.use.returnSearch);
       this.resultSearch = this.use.fullData.filter((poke) => {
         return Object.keys(poke).some((key) => {
-          if(!isNaN(parseInt(this.valueSearch)) === false){
-            return String(poke[key].name).toLowerCase().indexOf(this.valueSearch) > -1
-          }else if(!isNaN(parseInt(this.valueSearch))){
-            return String(poke.id).indexOf(this.valueSearch) > -1
+          if(!isNaN(parseInt(this.use.returnSearch)) === false){
+            return String(poke[key].name).toLowerCase().indexOf(this.use.returnSearch) > -1
+          } else if (!isNaN(parseInt(this.use.returnSearch))){
+            return String(poke.id).indexOf(this.use.returnSearch) > -1
           }
         })
       })
