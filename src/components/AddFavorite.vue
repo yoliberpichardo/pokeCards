@@ -16,10 +16,20 @@ export default {
       use
     }
   },
-  methods: {
-    
+  data(){
+    return{
+      pokeFavorito: null
+    }
+  },
+  methods:{
+    view(){
+      this.pokeFavorito = this.use.pokeFavorito
+      console.log(this.pokeFavorito);
+    }
+  },
+  mounted(){
+    this.view()
   }
-
 }
 </script>
 

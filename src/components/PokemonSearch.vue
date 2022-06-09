@@ -1,9 +1,3 @@
-<template>
-  <div class="pokemonSearch">
-    <PokeCard  :pokeData="use.fullData" />
-  </div>
-</template>
-
 <script>
 import SearchPokemon from '@/components/SearchPokemon.vue'
 import useStore from '../helpers/stores'
@@ -37,6 +31,13 @@ export default {
   }
 }
 </script>
+
+<template>
+  <div class="pokemonSearch">
+    <PokeCard  :pokeData="use.fullData" />
+  </div>
+</template>
+
 
 <style>
 

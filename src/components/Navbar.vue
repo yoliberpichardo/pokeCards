@@ -24,7 +24,7 @@ export default {
       this.use.resultSearch = this.use.fullData.filter((poke) => {
         return Object.keys(poke).some((key) => {
           if(!isNaN(parseInt(this.searchUpdate)) === false){
-            return String(poke[key].name).toLowerCase().indexOf(this.searchUpdate) > -1
+            return String(poke[key].name).indexOf(this.searchUpdate.toLowerCase()) > -1
           } else if (!isNaN(parseInt(this.searchUpdate))){
             return String(poke.id).indexOf(this.searchUpdate) > -1
           }
@@ -46,7 +46,6 @@ export default {
       <nav>
         <router-link to="/">Home</router-link>
         <router-link to="/AddFavorite">Pokemons Favorite</router-link>
-        <!-- <router-link to="/PokemonSearch">Search pokemon</router-link> -->
       </nav>
       <SearchPokemon @changeSearch="resolveSearch($event)" />
     </div>
@@ -56,8 +55,10 @@ export default {
 <style scoped>
 nav a {
   font-weight: bold; 
+  font-size: 2.3vh;
   color: #ffffff;
   margin: 0.6rem;
+  text-decoration: none;
 }
 
 nav a.router-link-exact-active {
@@ -68,7 +69,7 @@ nav a.router-link-exact-active {
   width: 100%;
   position:fixed;
   padding: 3rem 1rem 0 1rem;
-  margin-top: -15px;
+  margin-top: -30px;
   background: #000;
   z-index: 1000;
 }
@@ -76,5 +77,6 @@ nav a.router-link-exact-active {
 .subBodyNav{
   display: flex;
   justify-content: space-around;
+  text-decoration: none;
 }
 </style>

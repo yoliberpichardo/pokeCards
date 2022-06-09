@@ -1,5 +1,4 @@
 <script>
-import getPokemonOptions from '../helpers/pokeGet.ts';
 import useStore from '../helpers/stores';
 import PokeCardFront from './PokeCard.vue';
 
@@ -12,21 +11,7 @@ export default {
         use
       }
     },
-    methods:{
-      async dataPokemons() {
-        this.use.fullData = await getPokemonOptions()
-        this.use.fullData.map(poke => {
-          poke.isFront = true;
-          poke.rotation = '';
-          poke.isStar = true;
-          poke.isColor = '';
-          return poke
-        })
-      }
-    },
-    mounted(){
-      this.dataPokemons()
-    }
+    
 }
 </script>
 
@@ -39,7 +24,4 @@ export default {
 </template>
 
 <style scoped>
-  .bodyCardFront{
-    margin-top: 50px;
-  }
 </style>
