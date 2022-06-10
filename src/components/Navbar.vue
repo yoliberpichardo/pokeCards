@@ -42,12 +42,13 @@ export default {
 
 <template>
   <div class="body-nav">
+    <img class="pokeBall" src="../assets/Poké_Ball_icon.png" alt="">
     <div class="subBodyNav">
       <nav>
         <router-link to="/">Home</router-link>
         <router-link to="/AddFavorite">Pokemons Favorite</router-link>
       </nav>
-      <SearchPokemon @changeSearch="resolveSearch($event)" />
+      <SearchPokemon @changeSearch="resolveSearch($event)" class="searchComponent"/>
     </div>
   </div>
 </template>
@@ -67,16 +68,26 @@ nav a.router-link-exact-active {
 
 .body-nav {  
   width: 100%;
+  height: 50px;
   position:fixed;
-  padding: 3rem 1rem 0 1rem;
-  margin-top: -30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: -8px;
   background: #000;
   z-index: 1000;
 }
 
 .subBodyNav{
+  width: 97%;
   display: flex;
-  justify-content: space-around;
+  padding-right: 70px;
+  justify-content: space-between;
   text-decoration: none;
+}
+
+.pokeBall{
+  width: 50px;
+  height: 50px;
 }
 </style>

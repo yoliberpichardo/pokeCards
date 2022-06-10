@@ -45,15 +45,7 @@ export default {
                 if (poke.id === id) {
                     if (poke.isStar === false) {
                         poke.isStar = true
-                        this.use.pokemonFavorite = this.use.pokemonFavorite.filter((pokefilter) => {
-                            return Object.keys(pokefilter).some((key) => {
-                                if(key === 'isStar'){
-                                    if(pokefilter[key] === false){
-                                        return 
-                                    }
-                                }
-                            })
-                        })
+                        this.use.pokemonFavorite = this.use.pokemonFavorite.filter(pokefilter => pokefilter.id !== id);
                     }
 
                     return poke, this.use.pokemonFavorite
