@@ -1,12 +1,12 @@
 import apiGet from "@/api/getApi"
 
-const getPokemons = () => {
+// const getPokemons = () => {
 
-    const pokemonArr = Array.from( Array(100)  )
+//     const pokemonArr = Array.from( Array(100)  )
 
-    return pokemonArr.map( ( _ , index ) => index + 1)
+//     return pokemonArr.map( ( _ , index ) => index + 1)
 
-}
+// }
 
 const getPokemonOptions = async() => {
     const {pokeDatas} = await getPokemonNames()
@@ -14,11 +14,11 @@ const getPokemonOptions = async() => {
 }
 
 const getPokemonNames = async() => {
-    const resultPokemonArr = getPokemons()
+    // const resultPokemonArr = getPokemons()
     let pokeDatas = [];
   
-    for (let index = 0; index < resultPokemonArr.length; index++) {
-        pokeDatas.push(await (await apiGet.get(`pokemon/${index+1}`)).data)
+    for (let index = 1; index <= 100; index++) {
+        pokeDatas.push(await (await apiGet.get(`pokemon/${index}`)).data)
     }
     
     return {

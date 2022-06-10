@@ -86,6 +86,10 @@ nav a.router-link-exact-active {
   text-decoration: none;
 }
 
+.searchComponent{
+  width: 15%;
+}
+
 .pokeBall{
   width: 50px;
   height: 50px;
