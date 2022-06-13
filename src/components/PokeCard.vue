@@ -15,28 +15,10 @@ export default {
         changeStar(id){
             this.pokeData.forEach(element => {
                 if(element.id === id){
-                    element.isStar = false
-                    this.use.pokemonFavorite = this.use.fullData.filter(pokefilter => console.log(pokefilter))
-                }
-            //   console.log(element.isStar);  
+                    element.isStar = !element.isStar
+                    this.use.pokemonFavorite = this.use.fullData.filter(pokefilter => pokefilter.isStar === false)
+                } 
             })
-            // this.pokeData.map(poke => {
-            //     if (poke.id === id) {
-            //         if (poke.isStar === true) {
-            //             poke.isStar = false
-            //             this.use.pokemonFavorite = this.use.fullData.filter((pokefilter) => {
-            //                 return Object.keys(pokefilter).some((key) => {
-            //                     if(key === 'isStar'){
-            //                         if(pokefilter[key] === false){
-            //                             return pokefilter
-            //                         }
-            //                     }
-            //                 })
-            //             })
-            //         }
-            //         return poke
-            //     }
-            //  })
         },
         changeInfo(id){
             this.pokeData.map(poke => {
@@ -47,18 +29,6 @@ export default {
                 }
             })
         },
-        changeFavorite(id) {
-            this.pokeData.map(poke => {
-                if (poke.id === id) {
-                    if (poke.isStar === false) {
-                        poke.isStar = true
-                        this.use.pokemonFavorite = this.use.pokemonFavorite.filter(pokefilter => pokefilter.id !== id);
-                    }
-
-                    return poke, this.use.pokemonFavorite
-                }
-            })
-        }
     },
     watch: {
         pokeData: async function () {
@@ -85,7 +55,7 @@ export default {
                                 <h1> {{poke.id}}</h1>
                             </div>
                             <div class="infoContent">
-                                <div class="iconsFav" @click="changeStar(poke.id)" @dblclick="changeFavorite(poke.id)">
+                                <div class="iconsFav" @click="changeStar(poke.id)">
                                     <svg v-if="!poke.isStar" :fill="poke.isColor" xmlns="http://www.w3.org/2000/svg"
                                         viewBox="0 0 576 512">
                                         <path
@@ -150,7 +120,7 @@ export default {
                                     </div>
                                     <div class="habiContent">
                                         <p>Move 2<sup>do</sup>: </p>
-                                        <h3>{{poke.moves[1].move.name}}</h3>
+                                        <h4>{{poke.moves[1].move.name}}</h4>
                                     </div>
                                 </div>
                                 <div class="pokeStats">
