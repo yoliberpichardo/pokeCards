@@ -18,10 +18,11 @@ export default {
      async dataPokemons() {
         this.use.fullData = await getPokemonOptions()
         this.use.fullData.map(poke => {
-          poke.isFront = true;
+          poke.isFront = false;
           poke.rotation = '';
-          poke.isStar = true;
+          poke.isStar = false;
           poke.isColor = '';
+          poke.isShiny = false;
           return poke
         })
       }
