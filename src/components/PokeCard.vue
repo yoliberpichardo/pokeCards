@@ -13,23 +13,30 @@ export default {
     },
     methods:{
         changeStar(id){
-            this.pokeData.map(poke => {
-                if (poke.id === id) {
-                    if (poke.isStar === true) {
-                        poke.isStar = false
-                        this.use.pokemonFavorite = this.use.fullData.filter((pokefilter) => {
-                            return Object.keys(pokefilter).some((key) => {
-                                if(key === 'isStar'){
-                                    if(pokefilter[key] === false){
-                                        return pokefilter
-                                    }
-                                }
-                            })
-                        })
-                    }
-                    return poke
+            this.pokeData.forEach(element => {
+                if(element.id === id){
+                    element.isStar = false
+                    this.use.pokemonFavorite = this.use.fullData.filter(pokefilter => console.log(pokefilter))
                 }
-             })
+            //   console.log(element.isStar);  
+            })
+            // this.pokeData.map(poke => {
+            //     if (poke.id === id) {
+            //         if (poke.isStar === true) {
+            //             poke.isStar = false
+            //             this.use.pokemonFavorite = this.use.fullData.filter((pokefilter) => {
+            //                 return Object.keys(pokefilter).some((key) => {
+            //                     if(key === 'isStar'){
+            //                         if(pokefilter[key] === false){
+            //                             return pokefilter
+            //                         }
+            //                     }
+            //                 })
+            //             })
+            //         }
+            //         return poke
+            //     }
+            //  })
         },
         changeInfo(id){
             this.pokeData.map(poke => {
