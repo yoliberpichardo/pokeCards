@@ -118,6 +118,12 @@ export default {
                                 <h1 class="pokeName">{{poke.name}}</h1>
                             </div>
                             <div class="contentStats">
+                                <div class="pokeStats">
+                                    <div v-for="stats in poke.stats" :key="stats.base_stat" class="habiContent">
+                                        <p>{{stats.stat.name}}: </p>
+                                        <h3>{{stats.base_stat}}</h3>
+                                    </div>
+                                </div>
                                 <div class="pokeDescription">
                                     <div class="habiContent">
                                         <p>Ability 1<sup>ro</sup>: </p>
@@ -134,12 +140,6 @@ export default {
                                     <div class="habiContent">
                                         <p>Move 2<sup>do</sup>: </p>
                                         <h4>{{poke.moves[1].move.name}}</h4>
-                                    </div>
-                                </div>
-                                <div class="pokeStats">
-                                    <div v-for="stats in poke.stats" :key="stats.base_stat" class="habiContent">
-                                        <p>{{stats.stat.name}}: </p>
-                                        <h3>{{stats.base_stat}}</h3>
                                     </div>
                                 </div>
                             </div>
@@ -231,11 +231,6 @@ export default {
         color: #00ffff;
     }
 
-    .descriptionContent{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
 
     .typesContent{
         display: flex;
@@ -243,50 +238,54 @@ export default {
 
     }
 
-    .bodyCardBack{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        display: flex;
-        justify-content: center;
-        padding: 2rem;
-    }
 
-    .subBodyBack{
-        max-width: 350px;
-        display: flex;
-        flex-direction: column;
-        border-radius: 20px;
-    }
-
-    .pokeTitle, .habiContent, .contentStats{
+    .pokeTitle, .habiContent{
         display: flex;
         flex-direction: row;
         align-items: center;
     }
 
-    .contentStats{
-        min-width: 100%;
-        justify-content: space-around;
-        align-items: flex-start;
-        font-size: 1.2rem;
-    }
-
-
-    .pokeTitle{
+    .bodyCardBack{
+        max-width: 450px;
+        height: 100%;
+        display: flex;
+        margin: auto;
+        flex-direction: column;
         justify-content: center;
+        align-items: center;
     }
 
-    .pokeTitle h1{
-        margin: 25px;
+    .contentStats {
+        width: 90%;
+        height: 100%;
+        display: flex;
+        margin: auto;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
     }
+
+    .pokeDescription{
+        width: 100%;
+        height: 40%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .pokeStats{
+        width: 100%;
+        height: 50%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }   
 
     .habiContent{
-        margin: 10px;
-    }
-
-    .pokeStats div{
-        margin: 5px 10px;
+        width: 50%;
+        height: 40%;
     }
 
 </style>
