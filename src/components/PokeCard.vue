@@ -17,7 +17,7 @@ export default {
             this.pokeData.forEach(element => {
                 if(element.id === id){
                     element.isStar = !element.isStar
-                    this.use.pokemonFavorite = this.use.fullData.filter(pokefilter => pokefilter.isStar === false)
+                    this.use.pokemonFavorite = this.use.fullData.filter(pokefilter => pokefilter.isStar !== false)
                 } 
             })
         },
