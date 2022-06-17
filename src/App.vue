@@ -1,7 +1,8 @@
 <script>
 import Navbar from './components/Navbar.vue';
+import colors from './helpers/colors.json'
 import getPokemonOptions from './helpers/pokeGet';
-import useStore from './helpers/stores';
+import useStore from './store/stores';
 
 export default {
   name: 'App',
@@ -17,11 +18,11 @@ export default {
   methods:{
      async dataPokemons() {
         this.use.fullData = await getPokemonOptions()
-        this.use.fullData.map(poke => {
+        this.use.fullData.forEach(poke => {
           poke.isFront = false;
           poke.rotation = '';
           poke.isStar = false;
-          poke.isColor = '';
+          poke.isColor = colors.colorType[poke.types[0].type.name].color;
           poke.isShiny = false;
           return poke
         })

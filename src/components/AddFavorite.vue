@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import useStore from '../helpers/stores'
+import useStore from '../store/stores'
 import PokeCard from './PokeCard.vue'
 export default {
   name:'AddFavorite',
@@ -24,7 +24,6 @@ export default {
   methods:{
     view(){
       this.pokeFavorito = this.use.pokeFavorito
-      console.log(this.pokeFavorito);
     }
   },
   mounted(){

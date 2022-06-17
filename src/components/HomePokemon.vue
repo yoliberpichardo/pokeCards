@@ -1,5 +1,5 @@
 <script>
-import useStore from '../helpers/stores';
+import useStore from '../store/stores';
 import PokeCardFront from './PokeCard.vue';
 
 export default {

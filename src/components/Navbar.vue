@@ -1,5 +1,5 @@
 <script>
-import useStore from '@/helpers/stores'
+import useStore from '@/store/stores'
 import SearchPokemon from './SearchPokemon.vue'
 export default {
   components: { SearchPokemon },
@@ -48,7 +48,7 @@ export default {
         <router-link to="/">Home</router-link>
         <router-link to="/AddFavorite">Pokemons Favorite</router-link>
       </nav>
-      <SearchPokemon @changeSearch="resolveSearch($event)" class="searchComponent"/>
+      <SearchPokemon @changeSearch="resolveSearch($event)" class="search"/>
     </div>
   </div>
 </template>
@@ -86,7 +86,7 @@ nav a.router-link-exact-active {
   text-decoration: none;
 }
 
-.searchComponent{
+.search{
   width: 15%;
 }
 

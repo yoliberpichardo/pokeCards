@@ -1,7 +1,6 @@
 
 <script>
-import colors from '../helpers/colors.json'
-import useStore from '../helpers/stores'
+import useStore from '../store/stores'
 // import moduleName from '../assets/starBlack.svg';
 export default {
     name: 'Card',
@@ -22,7 +21,7 @@ export default {
             })
         },
         changeInfo(id){
-            this.pokeData.map(poke => {
+            this.pokeData.forEach(poke => {
                 if(poke.id === id){
                     poke.isFront === true ? poke.isFront = false : poke.isFront = true
                     poke.rotation === '' ? poke.rotation = 'transform: rotateY(-180deg)' : poke.rotation = ''
@@ -38,17 +37,17 @@ export default {
             })
         }
     },
-    watch: {
-        pokeData: async function () {
-            for (let index1 = 0; index1 < await this.pokeData.length; index1++){
-                for (let index2 in colors.colorType) {
-                    if (this.pokeData[index1].types[0].type.name === index2) {
-                        this.pokeData[index1].isColor = colors.colorType[this.pokeData[index1].types[0].type.name].color
-                    }
-                }
-            }
-        }
-    }
+    // watch: {
+    //     pokeData: async function () {
+    //         for (let index1 = 0; index1 < await this.pokeData.length; index1++){
+    //             for (let index2 in colors.colorType) {
+    //                 if (this.pokeData[index1].types[0].type.name === index2) {
+    //                     this.pokeData[index1].isColor = colors.colorType[this.pokeData[index1].types[0].type.name].color
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
 }
 </script>
 

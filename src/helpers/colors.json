@@ -1,74 +1,56 @@
 {"colorType":{
     "normal":{
-        "color":"#DDCCAA",
-        "background": "#ebab58"
+        "color":"#DDCCAA"
     },
     "fire":{
-        "color":"#FF7F00",
-        "background": "#bdea51"
+        "color":"#FF7F00"
     },
     "water":{
-        "color":"#B0E2FF",
-        "background": "#f0c06a"
+        "color":"#B0E2FF"
     },
     "electric":{
-        "color":"#FFD700",
-        "background": "#d2bbff"
+        "color":"#FFD700"
     },
     "ground":{
-        "color":"#DEB887",
-        "background": "#cf88b9"
+        "color":"#DEB887"
     },
     "poison":{
-        "color":"#CC88BB",
-        "background": "#efa141"
+        "color":"#CC88BB"
     },
     "bug":{
-        "color":"#99CC33",
-        "background": "#ff715e"
+        "color":"#99CC33"
     },
     "fighting":{
-        "color":"#FF6A6A",
-        "background": "#e07d48"
+        "color":"#FF6A6A"
     },
     "rock":{
-        "color":"#CD853F",
-        "background": "#9efc62"
+        "color":"#CD853F"
     },
     "grass":{
-        "color":"#99FF66",
-        "background": "#6583dc"
+        "color":"#99FF66"
     },
     "steel":{
-        "color":"#CCCCCC",
-        "background": "#af88fb"
+        "color":"#CCCCCC"
     },
     "dragon":{
-        "color":"#AB82FF",
-        "background": "#6c8ec3"
+        "color":"#AB82FF"
     },
     "ghost":{
-        "color": "#778899",
-        "background": "#f9b0fe"
+        "color": "#778899"
     },
     "fairy":{
-        "color":"#FFB0FF",
-        "background": "#ffc1dc"
+        "color":"#FFB0FF"
     },
     "psychic":{
-        "color": "#FFC6D9",
-        "background": "#83e6c1"
+        "color": "#FFC6D9"
     },
     "flying":{
-        "color": "#7AE7C7",
-        "background": "#a1eaf9"
+        "color": "#7AE7C7"
     },
     "ice":{
-        "color": "#AFEAFD",
-        "background": "#2f1f25"
+        "color": "#AFEAFD"
     },
     "default":{
-        "color":"#2A1A1F",
-        "background": "#dc92cf"
+        "color":"#2A1A1F"
     }
 }}
