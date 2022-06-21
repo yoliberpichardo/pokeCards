@@ -50,7 +50,7 @@
     "ice":{
         "color": "#AFEAFD"
     },
-    "default":{
-        "color":"#2A1A1F"
+    "dark":{
+        "color":"#A9A9A9"
     }
 }}

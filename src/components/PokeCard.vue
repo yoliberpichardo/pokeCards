@@ -20,7 +20,7 @@ export default {
                 } 
             })
         },
-        changeInfo(id){
+        changeInfo(id, data){
             this.pokeData.forEach(poke => {
                 if(poke.id === id){
                     poke.isFront === true ? poke.isFront = false : poke.isFront = true
@@ -28,6 +28,7 @@ export default {
                     return poke
                 }
             })
+            console.log(data);
         },
         changeShiny(id){
             this.pokeData.forEach(element => {
@@ -35,6 +36,9 @@ export default {
                     element.isShiny = !element.isShiny
                 }
             })
+        },
+        viewScroll(e){
+            console.log(e.target,' hi');
         }
     },
     // watch: {
@@ -54,7 +58,7 @@ export default {
 <template>
     <div v-if="pokeData" class="bodyCardFront">
         <div class="bodyContent">
-            <div class="subBodycontent">
+            <div class="subBodycontent" @scroll="viewScroll($event)">
                 <div v-for="poke in pokeData" :key="poke.id" class="subBodyCard" :style="`color: ${poke.isColor}; box-shadow: 5px 5px 9px 3px ${poke.isColor};`">
                     <div class="rotationBody" :style="poke.rotation">
                         <div class="up-menu" :style="poke.rotation">
@@ -78,7 +82,7 @@ export default {
                                             d="M287.9 0C297.1 0 305.5 5.25 309.5 13.52L378.1 154.8L531.4 177.5C540.4 178.8 547.8 185.1 550.7 193.7C553.5 202.4 551.2 211.9 544.8 218.2L433.6 328.4L459.9 483.9C461.4 492.9 457.7 502.1 450.2 507.4C442.8 512.7 432.1 513.4 424.9 509.1L287.9 435.9L150.1 509.1C142.9 513.4 133.1 512.7 125.6 507.4C118.2 502.1 114.5 492.9 115.1 483.9L142.2 328.4L31.11 218.2C24.65 211.9 22.36 202.4 25.2 193.7C28.03 185.1 35.5 178.8 44.49 177.5L197.7 154.8L266.3 13.52C270.4 5.249 278.7 0 287.9 0L287.9 0zM287.9 78.95L235.4 187.2C231.9 194.3 225.1 199.3 217.3 200.5L98.98 217.9L184.9 303C190.4 308.5 192.9 316.4 191.6 324.1L171.4 443.7L276.6 387.5C283.7 383.7 292.2 383.7 299.2 387.5L404.4 443.7L384.2 324.1C382.9 316.4 385.5 308.5 391 303L476.9 217.9L358.6 200.5C350.7 199.3 343.9 194.3 340.5 187.2L287.9 78.95z" />
                                     </svg>
                                 </div>
-                                <div class="iconsFav" :id="poke.id" @click="changeInfo(poke.id)">
+                                <div class="iconsFav" :id="poke.id" @click="changeInfo(poke.id, poke)">
                                     <svg v-if="!poke.isFront" :fill="poke.isColor" xmlns="http://www.w3.org/2000/svg"
                                         viewBox="0 0 50 50" width="100px" height="100px">
                                         <path
@@ -102,12 +106,9 @@ export default {
                                 <div class="nameContent">
                                     <h1>{{poke.name}}</h1>
                                 </div>
-                                <div class="typesContent">
-                                    <h3 v-if="poke.types[0].type.name">
-                                        {{poke.types[0].type.name}}
-                                    </h3>
-                                    <h3 v-if="poke.types[1]">
-                                        {{poke.types[1].type.name}}
+                                <div class="typesContent" >
+                                    <h3 v-for="type in poke.types" :key="type">
+                                        {{type.type.name}}
                                     </h3>
                                 </div>
                             </div>
@@ -123,22 +124,26 @@ export default {
                                         <h3>{{stats.base_stat}}</h3>
                                     </div>
                                 </div>
-                                <div class="pokeDescription">
-                                    <div class="habiContent">
-                                        <p>Ability 1<sup>ro</sup>: </p>
-                                        <h3>{{poke.abilities[0].ability.name}}</h3>
+                                <div  class="pokeDescription">
+                                    <div  class="habiContent"  v-for="(habi,index) in poke.abilities" :key="habi">
+                                        <p>Ability {{index+1}}:  </p>
+                                        <h3>{{habi.ability.name}}</h3>
                                     </div>
                                     <div class="habiContent">
-                                        <p>Ability 2<sup>do</sup>: </p>
-                                        <h3>{{poke.abilities[1].ability.name}}</h3>
-                                    </div>
-                                    <div class="habiContent">
-                                        <p>Move 1<sup>ro</sup>: </p>
+                                        <p>Move 1: </p>
                                         <h3>{{poke.moves[0].move.name}}</h3>
                                     </div>
                                     <div class="habiContent">
-                                        <p>Move 2<sup>do</sup>: </p>
-                                        <h4>{{poke.moves[1].move.name}}</h4>
+                                        <p>Move 2: </p>
+                                        <h3>{{poke.moves[1].move.name}}</h3>
+                                    </div>
+                                    <div class="habiContent">
+                                        <p>Move 3: </p>
+                                        <h3>{{poke.moves[2].move.name}}</h3>
+                                    </div>
+                                    <div class="habiContent">
+                                        <p>Move 4: </p>
+                                        <h3>{{poke.moves[3].move.name}}</h3>
                                     </div>
                                 </div>
                             </div>
@@ -176,7 +181,7 @@ export default {
 
     .rotationBody{
         width: 100%;
-        min-height: 666px;
+        min-height: 680px;
         display: flex;
         flex-direction: column;
         text-align: center;
@@ -261,12 +266,12 @@ export default {
         margin: auto;
         flex-direction: column;
         align-items: center;
-        justify-content: space-between;
+        justify-content: space-around;
     }
 
     .pokeDescription{
         width: 100%;
-        height: 40%;
+        height: 45%;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -284,7 +289,7 @@ export default {
 
     .habiContent{
         width: 50%;
-        height: 40%;
+        height: 30%;
     }
 
 </style>

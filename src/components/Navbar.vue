@@ -20,7 +20,6 @@ export default {
       this.searchUpdate = event
     },
     viewSearch() {
-      console.log(this.searchUpdate);
       this.use.resultSearch = this.use.fullData.filter((poke) => {
         return Object.keys(poke).some((key) => {
           if(!isNaN(parseInt(this.searchUpdate)) === false){
