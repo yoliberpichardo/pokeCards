@@ -117,6 +117,10 @@ export default {
                             <div class="pokeTitle">
                                 <h1 class="pokeName">{{poke.name}}</h1>
                             </div>
+                            <div class="contentBackImg">
+                                <img v-if="!poke.isShiny" :src="poke.sprites.other.home.front_default" :alt="poke.forms.name">
+                                <img v-else :src="poke.sprites.other.home.front_shiny" :alt="poke.forms.name">
+                            </div>
                             <div class="contentStats">
                                 <div class="pokeStats">
                                     <div v-for="stats in poke.stats" :key="stats.base_stat" class="habiContent">
@@ -243,53 +247,55 @@ export default {
     }
 
 
-    .pokeTitle, .habiContent{
+    .pokeTitle{
         display: flex;
         flex-direction: row;
         align-items: center;
     }
 
     .bodyCardBack{
-        max-width: 450px;
-        height: 100%;
+        max-width: 420px;
         display: flex;
-        margin: auto;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
+    }
+
+    .contentBackImg img{
+        width: 120px;
+        height: 120px;
     }
 
     .contentStats {
         width: 90%;
-        height: 100%;
+        height: 30%;
         display: flex;
-        margin: auto;
-        flex-direction: column;
+        flex-wrap: wrap;
         align-items: center;
-        justify-content: space-around;
     }
 
     .pokeDescription{
         width: 100%;
-        height: 45%;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: space-around;
+        margin: 8px;
     }
 
     .pokeStats{
+        text-transform: capitalize;
         width: 100%;
-        height: 50%;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: space-around;
     }   
+
 
     .habiContent{
         width: 50%;
-        height: 30%;
+    }
+
+    .habiContent h3, .habiContent p{
+        margin: 8px 10px;
     }
 
 </style>
