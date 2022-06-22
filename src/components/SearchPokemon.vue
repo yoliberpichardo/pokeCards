@@ -1,10 +1,3 @@
-<template>
-  <div class="bodySearch">
-    <input type="text" @input="resultSearch" v-model="searchPokemon" placeholder="Search Pokemon" >
-    <!-- <button @click="resultSearch(searchPokemon)">Search</button> -->
-  </div>
-</template>
-
 <script>
 export default {
   name: 'SearchPokemon',
@@ -16,6 +9,12 @@ export default {
   },
 }
 </script>
+
+<template>
+  <div class="bodySearch">
+    <input type="text" @input="resultSearch" v-model="searchPokemon" placeholder="Search Pokemon" >
+  </div>
+</template>
 
 <style scoped>
   .bodySearch input{

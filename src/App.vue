@@ -15,21 +15,33 @@ export default {
         use
       }
     },
+    data(){
+      return{
+        viewStorage: JSON.parse(localStorage.getItem('pokeFavorite'))
+      }
+    },
   methods:{
      async dataPokemons() {
         this.use.fullData = await getPokemonOptions()
         this.use.fullData.forEach(poke => {
           poke.isFront = false;
           poke.rotation = '';
-          poke.isStar = false;
           poke.isColor = colors.colorType[poke.types[0].type.name].color;
           poke.isShiny = false;
+          poke.isStar = false;
+          if(localStorage.getItem('pokeFavorite')){
+            this.viewStorage.map((element) => {
+              if(poke.id === element.id){
+                poke.isStar = true
+              }
+            })
+          }
           return poke
         })
       }
     },
-    mounted(){
-      this.dataPokemons()
+    mounted (){
+        this.dataPokemons()
     }
   }
 
@@ -56,7 +68,5 @@ export default {
     text-align: center;
     color: #2c3e50;
   }
-
-
 
 </style>

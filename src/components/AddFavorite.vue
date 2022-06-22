@@ -1,9 +1,3 @@
-<template>
-  <div class="bodyFavorite">
-    <PokeCard :pokeData="use.pokemonFavorite" />
-  </div>
-</template>
-
 <script>
 import useStore from '../store/stores'
 import PokeCard from './PokeCard.vue'
@@ -37,6 +31,8 @@ export default {
 }
 </script>
 
-<style>
-
-</style>
+<template>
+  <div class="bodyFavorite">
+    <PokeCard :pokeData="use.pokemonFavorite" />
+  </div>
+</template>

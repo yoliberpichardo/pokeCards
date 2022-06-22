@@ -37,7 +37,3 @@ export default {
     <PokeCard  :pokeData="use.fullData" />
   </div>
 </template>
-
-<style>
-
-</style>

@@ -7,11 +7,6 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import('../components/HomePokemon.vue'),
   },
   {
-    path: '/PokemonSearch',
-    name: 'PokemonSearch',
-    component: () => import('../components/PokemonSearch.vue')
-  },
-  {
     path: '/AddFavorite',
     name: 'AddFavorite',
     component: () => import('../components/AddFavorite.vue')
