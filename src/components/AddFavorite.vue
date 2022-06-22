@@ -28,6 +28,11 @@ export default {
   },
   mounted(){
     this.view()
+  },
+  watch:{
+    PokeCard(){
+      this.view()
+    }
   }
 }
 </script>

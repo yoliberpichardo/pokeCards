@@ -9,10 +9,6 @@
 export default {
   name: 'SearchPokemon',
   emits:['changeSearch'],
-  data() {
-    return {
-    }
-  },
   methods: {
     resultSearch(e) {
       this.$emit('changeSearch', e.target.value)

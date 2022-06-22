@@ -28,7 +28,7 @@ export default {
         })
       }
     },
-    mounted (){
+    mounted(){
       this.dataPokemons()
     }
   }

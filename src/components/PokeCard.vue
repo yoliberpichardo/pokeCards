@@ -17,6 +17,8 @@ export default {
                 if(element.id === id){
                     element.isStar = !element.isStar
                     this.use.pokemonFavorite = this.use.fullData.filter(pokefilter => pokefilter.isStar !== false)
+                    localStorage.setItem('pokeData',JSON.stringify(this.use.pokemonFavorite))
+                    console.log(localStorage);
                 } 
             })
         },
@@ -37,28 +39,23 @@ export default {
                 }
             })
         },
-        viewScroll(e){
-            console.log(e.target,' hi');
-        }
     },
-    // watch: {
-    //     pokeData: async function () {
-    //         for (let index1 = 0; index1 < await this.pokeData.length; index1++){
-    //             for (let index2 in colors.colorType) {
-    //                 if (this.pokeData[index1].types[0].type.name === index2) {
-    //                     this.pokeData[index1].isColor = colors.colorType[this.pokeData[index1].types[0].type.name].color
-    //                 }
-    //             }
-    //         }
-    //     }
-    // }
+    mounted(){
+        if(localStorage.getItem('pokeData')) {
+            try {
+                this.use.pokemonFavorite = JSON.parse(localStorage.getItem('pokeData'));
+            } catch(e) {
+                localStorage.removeItem('pokeData');
+            }
+        }
+    }
 }
 </script>
 
 <template>
     <div v-if="pokeData" class="bodyCardFront">
         <div class="bodyContent">
-            <div class="subBodycontent" @scroll="viewScroll($event)">
+            <div class="subBodycontent">
                 <div v-for="poke in pokeData" :key="poke.id" class="subBodyCard" :style="`color: ${poke.isColor}; box-shadow: 5px 5px 9px 3px ${poke.isColor};`">
                     <div class="rotationBody" :style="poke.rotation">
                         <div class="up-menu" :style="poke.rotation">
