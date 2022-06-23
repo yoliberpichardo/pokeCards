@@ -1,41 +1,8 @@
-<script>
-import useStore from '@/store/stores'
+<script> 
 import SearchPokemon from './SearchPokemon.vue'
 export default {
   components: { SearchPokemon },
   name: 'Navbar',
-  setup() {
-    const use = useStore()
-    return {
-      use
-    }
-  },
-  data(){
-    return{
-      searchUpdate:''
-    }
-  },
-  methods:{
-    resolveSearch(event) {
-      this.searchUpdate = event
-    },
-    viewSearch() {
-      this.use.resultSearch = this.use.fullData.filter((poke) => {
-        return Object.keys(poke).some((key) => {
-          if(!isNaN(parseInt(this.searchUpdate)) === false){
-            return String(poke[key].name).indexOf(this.searchUpdate.toLowerCase()) > -1
-          } else if (!isNaN(parseInt(this.searchUpdate))){
-            return String(poke.id).indexOf(this.searchUpdate) > -1
-          }
-        })
-      })
-    }
-  },
-  watch:{
-    searchUpdate: function (){
-      this.viewSearch()
-    }
-  }
 }
 </script>
 
@@ -47,7 +14,7 @@ export default {
         <router-link to="/">Home</router-link>
         <router-link to="/AddFavorite">Pokemons Favorite</router-link>
       </nav>
-      <SearchPokemon @changeSearch="resolveSearch($event)" class="search"/>
+      <SearchPokemon class="search"/>
     </div>
   </div>
 </template>

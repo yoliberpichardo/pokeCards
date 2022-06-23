@@ -1,12 +1,35 @@
 <script>
+import useStore from '@/store/stores'
 export default {
   name: 'SearchPokemon',
   emits:['changeSearch'],
-  methods: {
-    resultSearch(e) {
-      this.$emit('changeSearch', e.target.value)
+  setup(){
+    const use = useStore()
+    return{
+      use
     }
   },
+  data(){
+    return{
+      searchUpdate:null
+    }
+  },
+  methods:{
+    resultSearch(e) {
+      this.searchUpdate = e.target.value
+      console.log(this.searchUpdate);
+    },
+    viewSearch() {
+      this.use.resultSearch = this.use.fullData.filter( element => {
+        return String(element.name).indexOf(this.searchUpdate) > -1 || String(element.id).indexOf(this.searchUpdate) > -1
+      })
+    }
+  },
+  watch:{
+    searchUpdate(){
+      this.viewSearch()
+    }
+  }
 }
 </script>
 
