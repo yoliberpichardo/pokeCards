@@ -17,7 +17,6 @@ export default {
 
 <template>
 <div class="pokemonsContent">
-  <PokeCardFront v-if="use.resultSearch.length < 1" :pokeData="use.fullData" />
-  <PokeCardFront :pokeData="use.resultSearch" />
+  <PokeCardFront :pokeData="use.changeData()" />
 </div>
 </template>

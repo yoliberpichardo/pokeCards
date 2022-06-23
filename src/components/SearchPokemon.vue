@@ -16,20 +16,9 @@ export default {
   },
   methods:{
     resultSearch(e) {
-      this.searchUpdate = e.target.value
-      console.log(this.searchUpdate);
+      this.use.viewSearchUpdate = e.target.value
     },
-    viewSearch() {
-      this.use.resultSearch = this.use.fullData.filter( element => {
-        return String(element.name).indexOf(this.searchUpdate) > -1 || String(element.id).indexOf(this.searchUpdate) > -1
-      })
-    }
   },
-  watch:{
-    searchUpdate(){
-      this.viewSearch()
-    }
-  }
 }
 </script>
 

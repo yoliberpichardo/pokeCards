@@ -41,7 +41,7 @@ export default {
       }
     },
     mounted (){
-        this.dataPokemons()
+      this.dataPokemons()
     }
   }
 
