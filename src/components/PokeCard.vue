@@ -31,7 +31,8 @@ export default {
         changeShiny(id){
             this.pokeData.forEach(element => {
                 if(element.id === id){
-                    element.isShiny = !element.isShiny
+                        element.isShiny = !element.isShiny
+                
                 }
             })
         },
@@ -92,8 +93,8 @@ export default {
                         </div>
                         <div v-if="!poke.isFront" :style="poke.rotation">
                             <div class="imgContent">
-                                <img v-if="!poke.isShiny" :src="poke.sprites.other.home.front_default" :alt="poke.forms.name">
-                                <img v-else :src="poke.sprites.other.home.front_shiny" :alt="poke.forms.name">
+                                <img v-show="!poke.isShiny" :src="poke.sprites.other.home.front_default" :alt="poke.forms.name">
+                                <img v-show="poke.isShiny" :src="poke.sprites.other.home.front_shiny" :alt="poke.forms.name">
                             </div>
                             <div class="descriptionContent">
                                 <div class="nameContent">
@@ -109,10 +110,6 @@ export default {
                         <div v-else class="bodyCardBack" :style="poke.rotation">
                             <div class="pokeTitle">
                                 <h1 class="pokeName">{{poke.name}}</h1>
-                            </div>
-                            <div class="contentBackImg">
-                                <img v-if="!poke.isShiny" :src="poke.sprites.other.home.front_default" :alt="poke.forms.name">
-                                <img v-else :src="poke.sprites.other.home.front_shiny" :alt="poke.forms.name">
                             </div>
                             <div class="contentStats">
                                 <div class="pokeStats">
@@ -167,18 +164,20 @@ export default {
     }
 
     .subBodyCard{
-        max-width: 100%;
+        width: 24rem;
+        height: 29.8rem;
         margin: 20px;
         display: flex;
         flex-direction: row;
         border-radius: 20px;
         box-shadow: 5px 5px 9px 3px #f6f4f4;
         perspective: 1000px;
+        background:   #000000;
     }
 
     .rotationBody{
         width: 100%;
-        min-height: 680px;
+        height: 100%;
         display: flex;
         flex-direction: column;
         text-align: center;
@@ -187,19 +186,12 @@ export default {
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     }
 
-    .subBodyCard{
-        max-width: 512px;
-        background:   #000000;
-
-    }
-
     .imgContent img {
-        max-width: 420px;
-        max-height: 420px;
+        width: 75%;
     }
     .up-menu{
-        width:calc(100% - 30px);
-        height: auto;
+        width: calc(100% - 30px);
+        height: 10%;
         display: flex;
         flex-direction: row;
         justify-content: space-around;
@@ -208,8 +200,10 @@ export default {
 
     .pokeID{
         width: 30%;
+        height: 100%;
         display: flex;
         justify-content: left;
+        align-items: center;
     }
 
     .infoContent{
@@ -239,9 +233,11 @@ export default {
     }
 
     .pokeTitle{
+        height: 12%;
         display: flex;
         flex-direction: row;
         align-items: center;
+        font-size: 0.9rem;
     }
 
     .bodyCardBack{
@@ -251,30 +247,25 @@ export default {
         align-items: center;
     }
 
-    .contentBackImg img{
-        width: 120px;
-        height: 120px;
-    }
-
     .contentStats {
         width: 90%;
-        height: 30%;
+        height: 90%;
         display: flex;
         flex-wrap: wrap;
         align-items: center;
     }
 
     .pokeDescription{
-        width: 100%;
+        height: 50%;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        margin: 8px;
+        margin: 5px;
     }
 
     .pokeStats{
         text-transform: capitalize;
-        width: 100%;
+        height: 40%;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -286,7 +277,7 @@ export default {
     }
 
     .habiContent h3, .habiContent p{
-        margin: 8px 10px;
+        margin: 7px 10px;
     }
 
 </style>

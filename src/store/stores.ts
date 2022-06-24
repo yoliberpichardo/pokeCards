@@ -16,11 +16,10 @@ const useStore = defineStore('storeID', {
     changeData(){
       if(this.viewSearchUpdate){
         return this.fullData.filter((element) =>{
-          return String(element["name"]).indexOf(this.viewSearchUpdate) > -1 || String(element["id"]).indexOf(this.viewSearchUpdate) > -1
-        });
+            return String(element["name"]).indexOf(this.viewSearchUpdate) > -1 || String(element["id"]).indexOf(this.viewSearchUpdate) > -1
+          });
       } 
         return this.fullData
-      
       }
   }
 })

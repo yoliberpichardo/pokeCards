@@ -9,7 +9,7 @@ const getPokemonNames = async() => {
 
     let pokeDatas = [];
   
-    for (let index = 1; index <= 10; index++) {
+    for (let index = 1; index <= 100; index++) {
         pokeDatas.push(await (await apiGet.get(`pokemon/${index}`)).data)
     }
     

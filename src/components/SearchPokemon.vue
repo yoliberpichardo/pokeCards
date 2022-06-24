@@ -16,7 +16,9 @@ export default {
   },
   methods:{
     resultSearch(e) {
-      this.use.viewSearchUpdate = e.target.value
+      setInterval(() => {
+        this.use.viewSearchUpdate = e.target.value
+      },1000)
     },
   },
 }
@@ -33,6 +35,10 @@ export default {
     width: 100%;
     height: 25px;
     font-size: 1rem;
+    border-radius: 10px;
+  }
+  .bodySearch input:focus{
+    outline: ridge #07fd69 3px;
     
   }
 </style>
